@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import securitylearn.learnSecurity.service.UserService;
 
 @RequiredArgsConstructor
-@EnableWebSecurity // 1
+@EnableWebSecurity
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 

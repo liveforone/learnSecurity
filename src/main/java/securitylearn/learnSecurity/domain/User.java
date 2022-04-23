@@ -20,17 +20,17 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "code")
+    @Column(name = "code")  //== id
     private Long code;
 
-    @Column(name = "email", unique = true)
+    @Column(name = "email", unique = true)  //unique 즉 중복을 방지한다.
     private String email;
 
     @Column(name = "password")
     private String password;
 
     @Column(name = "auth")
-    private String auth;
+    private String auth;  //권한 = auth
 
     @Builder
     public User(String email, String password, String auth) {

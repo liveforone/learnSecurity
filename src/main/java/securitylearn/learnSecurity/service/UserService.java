@@ -25,7 +25,7 @@ public class UserService implements UserDetailsService {
     @Override
     public User loadUserByUsername(String email) throws UsernameNotFoundException {
         return userRepository.findByEmail(email)
-                .orElseThrow(() ->new UsernameNotFoundException((email)));
+                .orElseThrow(() -> new UsernameNotFoundException((email)));
     }
 
     /*
@@ -36,12 +36,12 @@ public class UserService implements UserDetailsService {
 
     public Long save(UserDto userDto) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        userDto.setPassword(encoder.encode(userDto.getPassword()));
+        userDto.setPassword(encoder.encode(userDto.getPassword()));  //pw암호화
 
         return userRepository.save(User.builder()
                 .email(userDto.getEmail())
                 .auth(userDto.getAuth())
                 .password(userDto.getPassword()).build()
-        ).getCode();
+        ).getCode();  //id값 반환
     }
 }
