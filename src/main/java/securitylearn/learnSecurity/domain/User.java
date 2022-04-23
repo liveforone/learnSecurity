@@ -20,8 +20,8 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long id;
+    @Column(name = "code")
+    private Long code;
 
     @Column(name = "email", unique = true)
     private String email;

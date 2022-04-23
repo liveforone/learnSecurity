@@ -19,9 +19,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) {  //인증을 무시할 경로들을 설정
-        web.ignoring().antMatchers("/css/**", "/js/**", "/img/**");
+        web.ignoring().antMatchers("/css/**", "/js/**");
     }
 
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         /*
         antMatchers -> 경로 및 권환 설정
